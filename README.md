@@ -6,6 +6,8 @@ Created on Wed Feb 21 20:31:30 2024
 @author: emil
 """
 # Partikel Liv
+En video inspelning från simulering. 
+https://youtu.be/XjAyJc6_ppg?si=M_o4r_zOCpO9KvmY
 
 Partikelsimulator baserad på youtube videos jag sett om Particle Life.
 Den kör en partikel genererande klass i pygame som jag försökt optimera på 4 olika sätt.
