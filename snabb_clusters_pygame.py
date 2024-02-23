@@ -66,7 +66,7 @@ else:
 
 
 
-NUM_PARTIKLAR = 100 ## Runt 50*4 typer ger bra prestanda och intressanta interaktioner.
+NUM_PARTIKLAR = 30 ## Runt 50*4 typer ger bra prestanda och intressanta interaktioner.
 
 
 # färger för vår breed Valde några pasteller för att representera Röd Grön Blå Gul 
@@ -598,12 +598,15 @@ for _ in range(NUM_PARTIKLAR):
     partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 3)
     partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 4)
     partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 5)
-    #partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 6)
-    #partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 7)
-    #partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 8)
-    #partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 9)
-    #partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 10)
-    #partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 11)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 6)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 7)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 8)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 9)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 10)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 11)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 12)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 13)
+    partikelsystemet.add_partikel(random.uniform(10, WIDTH -10), random.uniform(10, HEIGHT -10), 14)
 # Main pygame Loop
 running = True
 clock = pygame.time.Clock()
@@ -658,7 +661,8 @@ while running:
 
     
 
-    tid_tagar_ur = font_fps_raknare.render(f'FPS:{round(clock.get_fps(), 1)} Timer: {str(sekunder // 60)}:{str(sekunder % 60)} (60sek new random attraction weights!)', True, (255, 255, 255))
+    #tid_tagar_ur = font_fps_raknare.render(f'FPS:{round(clock.get_fps(), 1)} Timer: {str(sekunder // 60)}:{str(sekunder % 60)} (60sek new random attraction weights!)', True, (255, 255, 255))
+    tid_tagar_ur = font_fps_raknare.render(f'Timer: {str(sekunder // 60)}:{str(sekunder % 60)} (Every 60sek, new random lifeforms!)', True, (255, 255, 255))
     tid_tagar_ur_forskjutning_pixlar = tid_tagar_ur.get_rect().width
     tid_tagar_ur_bakgrund = pygame.Surface(tid_tagar_ur.get_size())
     tid_tagar_ur_bakgrund.fill((11, 10, 47))

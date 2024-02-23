@@ -1,5 +1,5 @@
 import pygame
-
+import random
 class Button:
     def __init__(self, color, x, y, width, height, text='', text_color=(255,255,255)):
         self.color = color
@@ -94,10 +94,14 @@ class set_partikel_vikter:
                         self.vikter[self.selected_weight] += 1
                     elif knapp.text == '+10':
                         self.vikter[self.selected_weight] += 10
+                    elif knapp.text == '+Random':
+                        self.vikter[self.selected_weight] = random.randint(0, 30)
                     elif knapp.text == '-1':
                         self.vikter[self.selected_weight] -= 1
                     elif knapp.text == '-10':
                         self.vikter[self.selected_weight] -= 10
+                    elif knapp.text == '-Random':
+                        self.vikter[self.selected_weight] = random.randint(-30, 0)
                     self.partikelsystem.set_custom_attraktion(self.typ, self.vikter)
                     self.status = 'main'
                     self.skapa_main_knappar()
@@ -112,8 +116,10 @@ class set_partikel_vikter:
         self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 30, 100, 25, "Vikt: " + str(self.vikter[self.selected_weight])))  # Ändrad här
         self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 90, 100, 25, "+1"))
         self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 120, 100, 25, "+10"))
-        self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 150, 100, 25, "-1"))
-        self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 180, 100, 25, "-10"))
+        self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 150, 100, 25, "+Random"))
+        self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 180, 100, 25, "-1"))
+        self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 210, 100, 25, "-10"))
+        self.knappar.append(Button((41, 40, 114, 50), self.x, self.y + 240, 100, 25, "-Random"))
         
 #    def skapa_select_weight_knappar(self):
 #        self.knappar = []
